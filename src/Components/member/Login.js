@@ -45,7 +45,7 @@ function Login() {
 				setAuth(resp.data.id); // 사용자 인증 정보(아이디 저장)
 				setHeaders({"Authorization": `Bearer ${resp.data.jwt}`}); // 헤더 Authorization 필드 저장
 
-				navigate("/bbslist");
+				navigate("/");
 			
 
 		}).catch((err) => {
@@ -57,29 +57,19 @@ function Login() {
 	}
 
 	return (
-		<div>
-			<table className="table">
-				<tbody>
-					<tr>
-						<th className="col-3">아이디</th>
-						<td>
-							<input type="text" value={id} onChange={changeId} size="50px" />
-						</td>
-					</tr>
-
-					<tr>
-						<th>비밀번호</th>
-						<td>
-							<input type="password" value={pwd} onChange={changePwd} size="50px" />
-						</td>
-					</tr>
-				</tbody>
-			</table><br />
-
-			<div className="my-1 d-flex justify-content-center">
-				<button className="btn btn-outline-secondary" onClick={login}><i className="fas fa-sign-in-alt"></i> 로그인</button>
-			</div>
-
+		<div className="text-center">
+		<img className="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
+		<h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+	
+		<div className="form-floating">
+		  <input type="email" className="form-control"  value={id} onChange={changeId} placeholder="Id"/>
+		</div>
+		
+		<div className="form-floating">
+		  <input type="password" className="form-control" value={pwd} onChange={changePwd} placeholder="Password"/>
+		</div>
+	
+		<button className="w-100 btn btn-lg btn-primary" onClick={login}><i classNameName="fas fa-sign-in-alt"></i> 로그인</button>
 		</div>
 	);
 }

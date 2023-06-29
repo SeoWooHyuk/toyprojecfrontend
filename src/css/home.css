@@ -1,38 +1,14 @@
 
-.ba_box1
-{
-    width: 100%; 
-    height: 100%;
-    margin-right: auto;
-    margin-left: auto; 
-}
-.ba_box2
+.ba_box
 {
     width: 100%; 
     height: 100%; 
     background-color: rgb(7, 30, 54); 
     float: left;
 }
-.ba_box3
-{
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    margin: 25px auto;
-}
-
-.ba_box4
-{
-    width: 1280px;
-    height: 380px; 
-    list-style: none; 
-    margin-left: auto; 
-    margin-right: auto;
-}
-
 
 .banner_sec1{
-	height:380px;
+	height:100%;
 	float:left;
 	margin-left:50px;
 }
@@ -50,13 +26,13 @@
 	width: 440px;
 	height: 50px;
 	border: solid 3px white;
-	background: url() no-repeat 410px 5px;
-	background-size: 40px 40px;
-	margin-left: 30px;;
+	background: 410px 5px;
+	background-size: 40px;
+	margin-left: 30px;
 }
 .banner_sec1 ul{
 	width: 500px;
-	height: 100px;
+	height: 150px;
 	margin-top: 30px;
 	padding-left: 0;
 }
@@ -80,7 +56,7 @@
 	width:500px;
 	height:380px;
 	float:left;
-	margin-left:50px;
+	margin : 20px;
 }
 
 .slider   {
@@ -122,7 +98,7 @@
   margin: 0;
   padding: 0;
   width: 565px;
-  height: 400px;
+  height: 350px;
   z-index: 1;
 }
 
@@ -134,7 +110,7 @@
 
 
 /* 슬리아드버튼 */
-a.control_prev, a.control_next {
+button.control_prev, button.control_next {
     position: absolute;
     top: 40%;
     z-index: 999;
@@ -147,25 +123,25 @@ a.control_prev, a.control_next {
     cursor: pointer;
   }
   
-  a.control_prev:hover, a.control_next:hover {
+  button.control_prev:hover, button.control_next:hover {
     opacity: 0.9;
   }
   
-  a.control_prev {
+  button.control_prev {
     border-radius: 0 5px 5px 0;
   }
   
-  a.control_next {
+  button.control_next {
     right: 0;
     border-radius: 5px 0 0 5px;
   }
 
-  a.control_prev:focus {
+  button.control_prev:focus {
     border-radius: 0 2px 2px 0;
     outline: none;
   }
 
-  a.control_next:focus {
+  button.control_next:focus {
     right: 0;
     border-radius: 2px 0 0 2px;
     outline: none;
