@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Pagination from "react-js-pagination";
 
-import "../../css/bbslist.css";
+import "../../css/BulBoardlist.css";
 import "../../css/page.css";
 
-function BbsList() {
+function BulBoardList() {
 
 	const [bbsList, setBbsList] = useState([]);
 
@@ -23,7 +23,7 @@ function BbsList() {
 
 
 	/* [GET /bbs]: 게시글 목록 */
-	const getBbsList = async (choice, search, page) => {
+	const getBulBoardList = async (choice, search, page) => {
 
 		await axios.get("http://localhost:8080/bulletinboard", { params: { "choice": choice, "search": search, "page": page } })
 			.then((resp) => {
@@ -41,7 +41,7 @@ function BbsList() {
 	}
 
 	useEffect(() => {
-		getBbsList("", "", 1);
+		getBulBoardList("", "", 1);
 	}, []);
 
 
@@ -50,13 +50,13 @@ function BbsList() {
 	const search = () => {
 		console.log("[BbsList.js searchBtn()] choiceVal=" + choiceVal + ", searchVal=" + searchVal);
 
-		navigate("/bbslist");
-		getBbsList(choiceVal, searchVal, 1);
+		navigate("/bulboardlist");
+		getBulBoardList(choiceVal, searchVal, 1);
 	}
 
 	const changePage = (page) => {
 		setPage(page);
-		getBbsList(choiceVal, searchVal, page);
+		getBulBoardList(choiceVal, searchVal, page);
 	}
 
 	return (
@@ -137,7 +137,7 @@ function TableRow(props) {
 							<td >
 								<Arrow depth={bbs.depth}></Arrow> &nbsp; { /* 답글 화살표 */}
 
-								<Link to={{ pathname: `/bbsdetail/${bbs.seq}` }}> { /* 게시글 상세 링크 */}
+								<Link to={{ pathname: `/bulboarddetail/${bbs.seq}` }}> { /* 게시글 상세 링크 */}
 									<span className="underline bbs-title" >{bbs.title} </span> { /* 게시글 제목 */}
 								</Link>
 							</td>
@@ -180,4 +180,4 @@ function Arrow( props ) {
 	 );
 }
 
-export default BbsList;
+export default BulBoardList;
