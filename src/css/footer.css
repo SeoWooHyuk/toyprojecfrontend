@@ -1,11 +1,12 @@
 footer {
-	position: sticky;
-	left: 0px;
-	bottom: 0px;
-	height: 120px;
+	position: relative;
+	margin-top: 10px;
 	width: 100%;
-	background-color: white;
+	height: 150PX;
 	border-top: 1px silver solid;
+	background-color: white;
+	left: 0;
+	z-index: 1;
 }
 .footer1
 {

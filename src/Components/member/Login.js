@@ -45,7 +45,7 @@ function Login() {
 				setAuth(resp.data.id); // 사용자 인증 정보(아이디 저장)
 				setHeaders({"Authorization": `Bearer ${resp.data.jwt}`}); // 헤더 Authorization 필드 저장
 
-				navigate("/");
+				navigate(-1);
 			
 
 		}).catch((err) => {

@@ -1,10 +1,8 @@
 
 .ba_box
 {
-    width: 100%; 
-    height: 100%; 
+    height: 400px; 
     background-color: rgb(7, 30, 54); 
-    float: left;
 }
 
 .banner_sec1{
@@ -54,14 +52,14 @@
 
 .banner_sec2{
 	width:500px;
-	height:380px;
-	float:left;
+  height: auto;
+float: right;
 	margin : 20px;
 }
 
 .slider   {
   position: relative;
-  overflow: hidden;
+  height: 360px;
   border-radius: 10px;
   border-width: 0.5px;
   
@@ -71,38 +69,18 @@
   position: relative;
   margin: 0;
   padding: 0;
-  height: auto;
-  width: 300px;
+  height: 100%;
+  width: 100%;
   list-style: none;
 }
 
-.side a{
-	width: 140px;
-	height: 40px;
-	margin-top: 10px;
-	font-size: 10pt;
-	border-radius: 5px;
-	line-height: 40px;
-	color: gray;
-	font-weight: bold;
-}
-.side a:hover{
-	color: black;
-	font-size: 11pt;
-}
-  
-.slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 565px;
-  height: 350px;
-  z-index: 1;
+.slider ul li
+{
+    width: 100%;
+    height: 100%;
 }
 
-.slider ul li image
+.slider ul li img
 {
     width: 100%;
     height: 100%;

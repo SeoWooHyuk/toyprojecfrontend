@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthProvider";
 import { HttpHeadersContext } from "../context/HttpHeadersProvider";
 
-function BbsWrite() {
+function BulBoardWrite() {
 
 	const { auth, setAuth } = useContext(AuthContext)
 	const { headers, setHeaders } = useContext(HttpHeadersContext);
@@ -31,13 +31,13 @@ function BbsWrite() {
 			content: content
 		}
 
-		await axios.post("http://localhost:3000/bbs", req, {headers: headers})
+		await axios.post("http://localhost:8080/bulletinboard", req, {headers: headers})
 		.then((resp) => {
 			console.log("[BbsWrite.js] createBbs() success :D");
 			console.log(resp.data);
 
 			alert("새로운 게시글을 성공적으로 등록했습니다 :D");
-			navigate(`/bbsdetail/${resp.data.seq}`); // 새롭게 등록한 글 상세로 이동
+			navigate(`/bulboarddetail/${resp.data.seq}`); // 새롭게 등록한 글 상세로 이동
 		})
 		.catch((err) => {
 			console.log("[BbsWrite.js] createBbs() error :<");
@@ -87,4 +87,4 @@ function BbsWrite() {
 	);
 }
 
-export default BbsWrite;
+export default BulBoardWrite;

@@ -29,6 +29,7 @@ function Home() {
 	return (
 	<>
 	<div className="ba_box"> 
+	<div className='ba_box2'>
 		<div className="banner_sec1">
 			<h1>
 					스프링부트 3.10 개인 포트폴리오
@@ -54,6 +55,7 @@ function Home() {
 				</ul> 
 			</div>
 		</div>
+	</div>
 	</div>
 	</>
 	);

@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Pagination from "react-js-pagination";
-
 import "../../css/BulBoardlist.css";
 import "../../css/page.css";
 
@@ -115,7 +114,7 @@ function BulBoardList() {
 				onChange={changePage} />
 				
 			<div className="my-5 d-flex justify-content-center">
-				<Link className="btn btn-outline-secondary" to="/bbswrite"><i className="fas fa-pen"></i> &nbsp; 글쓰기</Link>
+				<Link className="btn btn-outline-secondary" to="/bulboardwrite"><i className="fas fa-pen"></i> &nbsp; 글쓰기</Link>
 			</div>
 
 		</div>
