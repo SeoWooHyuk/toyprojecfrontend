@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { HttpHeadersContext } from "../context/HttpHeadersProvider";
 
-function BbsUpdate() {
+function BulBoardUpdate() {
 
 	const { headers, setHeaders } = useContext(HttpHeadersContext);
 	const { auth, setAuth } = useContext(AuthContext);
@@ -12,10 +12,10 @@ function BbsUpdate() {
 	const navigate = useNavigate();
 
 	const location = useLocation();
-	const { bbs } = location.state;
+	const { bulletinboard } = location.state;
 	
-	const [title, setTitle] = useState(bbs.title);
-	const [content, setContent] = useState(bbs.content);
+	const [title, setTitle] = useState(bulletinboard.title);
+	const [content, setContent] = useState(bulletinboard.content);
 
 	const changeTitle = (event) => {
 		setTitle(event.target.value);
@@ -25,7 +25,7 @@ function BbsUpdate() {
 		setContent(event.target.value);
 	}
 
-	const updateBbs = async () => {
+	const updateBulBoard = async () => {
 
 		const req = {
 			id: auth, 
@@ -33,15 +33,13 @@ function BbsUpdate() {
 			content: content
 		}
 
-		await axios.patch(`http://localhost:3000/bbs/${bbs.seq}`, req, {headers: headers})
+		await axios.put(`http://localhost:8080/bulletinboard/${bulletinboard.seq}`, req, {headers: headers})
 		.then((resp) => {
 			console.log("[BbsUpdate.js] updateBbs() success :D");
 			console.log(resp.data);
-
-			if (resp.data.updatedRecordCount == 1) {
-				alert("게시글을 성공적으로 수정했습니다 :D");
-				navigate(`/bbsdetail/${bbs.seq}`); // 글 상세로 이동
-			}
+				// alert("게시글을 성공적으로 수정했습니다 :D");
+				// navigate(`/bbsdetail/${bulletinboard.seq}`); // 글 상세로 이동
+		
 
 		})
 		.catch((err) => {
@@ -57,9 +55,10 @@ function BbsUpdate() {
 			<table className="table">
 				<tbody>
 					<tr>
+						
 						<th className="table-primary">작성자</th>
 						<td>
-							<input type="text" className="form-control"  value={bbs.id} size="50px" readOnly />
+							<input type="text" className="form-control"  value={bulletinboard.id} size="50px" readOnly />
 						</td>
 					</tr>
 
@@ -80,11 +79,11 @@ function BbsUpdate() {
 			</table>
 
 			<div className="my-3 d-flex justify-content-center">
-				<button className="btn btn-dark" onClick={updateBbs}><i className="fas fa-pen"></i> 수정하기</button>
+				<button className="btn btn-dark" onClick={updateBulBoard}><i className="fas fa-pen"></i> 수정하기</button>
 			</div>
 		</div>
 	);
 
 }
 
-export default BbsUpdate;
+export default BulBoardUpdate;

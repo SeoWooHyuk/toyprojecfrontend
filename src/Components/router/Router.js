@@ -7,6 +7,7 @@ import Logout from "../member/Logout"
 import BulBoardDetail from "../BulBoard/BulBoardDetail"
 import BulBoardWrite from "../BulBoard/BulBoardWrite"
 import BulBoardList from "../BulBoard/BulBoardList"
+import BulBoardUpdate from "../BulBoard/BulBoardUpdate"
 
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
 	return (
 			<Routes>
 				<Route path="/bulboardlist" element={<BulBoardList />}></Route>
+				<Route path="/BulBoardUpdate" element={<BulBoardUpdate />}></Route>
 				<Route path="/bulboardwrite" element={<BulBoardWrite />}></Route>
 				<Route path="/bulboarddetail/:seq" element={<BulBoardDetail />}></Route>
 				<Route path="/" element={<Home />}></Route>

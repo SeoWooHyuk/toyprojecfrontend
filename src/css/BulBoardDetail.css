@@ -20,6 +20,7 @@
 {
     font-size: large;
     float: right;
+    padding-right: 15px;
    
 }
 
@@ -45,7 +46,7 @@
 .idbox
 {
     font-size: small;
-  padding-right: 50px;
+   padding-right: 30px;
 }
 
 .content_box
@@ -85,6 +86,10 @@
 
 table{
     width: 100%;
+}
+
+table .reply{
+    background-color:  #e9ecef;
 }
 
 
