@@ -35,15 +35,15 @@ function BulBoardUpdate() {
 
 		await axios.put(`http://localhost:8080/bulletinboard/${bulletinboard.seq}`, req, {headers: headers})
 		.then((resp) => {
-			console.log("[BbsUpdate.js] updateBbs() success :D");
+			console.log("[BulBoardUpdate.js] updateBulBoard() success :D");
 			console.log(resp.data);
-				// alert("게시글을 성공적으로 수정했습니다 :D");
-				// navigate(`/bbsdetail/${bulletinboard.seq}`); // 글 상세로 이동
+				alert("게시글을 성공적으로 수정했습니다 :D");
+				navigate(`/bulboarddetail/${bulletinboard.seq}`); // 글 상세로 이동
 		
 
 		})
 		.catch((err) => {
-			console.log("[BbsUpdate.js] updateBbs() error :<");
+			console.log("[BulBoardUpdate.js] updateBulBoard() error :<");
 			console.log(err);
 		});
 
