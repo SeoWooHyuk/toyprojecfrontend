@@ -1,3 +1,23 @@
+# 프로젝트 이름 : toyprojecfrontend
+| Skill Set   |     | 
+|---|---|
+| Languages | js | 
+| tool   | Vscode, GitHub |
+|npm version | 9.5.1|
+|React version | 18.2.0|
+| npm package | axios , pagination ,react-router-dom |
+| Library | React |
+| Server | node.js  |
+| Environment |   Window |
+| Environment |   Notion |
+
+
+| 목적  |  자기개발 목적   | 
+|---|---|
+|  목적 |  스프링부트로 서버와 연결하여 작업 공부 |
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
